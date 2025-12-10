@@ -184,7 +184,7 @@ HAVING count(*) > 1;
 
 ### 3. CTAS (Create Table As Select)
 
-- **Task 6: Create Summary Tables**: Used CTAS to generate new tables based on query results - each book and total book_issued_cnt**
+**Task 6: Create Summary Tables**: Used CTAS to generate new tables based on query results - each book and total book_issued_cnt**
 
 ```sql
 CREATE TABLE book_issued_count AS
@@ -202,14 +202,14 @@ SELECT * FROM book_issued_count;
 
 The following SQL queries were used to address specific questions:
 
-Task 7. **Retrieve All Books in a Specific Category**:
+** Task 7. Retrieve All Books in a Specific Category**:
 
 ```sql
 SELECT * FROM books
 WHERE category = "Classic";
 ```
 
-8. **Task 8: Find Total Rental Income by Category**:
+**Task 8: Find Total Rental Income by Category**:
 
 ```sql
 SELECT b.category, SUM(b.rental_price) AS total_revenue
@@ -220,13 +220,13 @@ GROUP BY b.category
 ORDER BY total_revenue DESC;
 ```
 
-9. **List Members Who Registered in the Last 4 years:
+** Task 9. List Members Who Registered in the Last 4 years:
 ```sql
 SELECT * FROM members
 WHERE date >= CURRENT_DATE() - INTERVAL 4 YEAR;
 ```
 
-10. **List Employees with Their Branch Manager's Name and their branch details**:
+**Task 10. List Employees with Their Branch Manager's Name and their branch details**:
 
 ```sql
 SELECT e1.emp_id, e1.emp_name, b.*, e2.emp_name
@@ -238,14 +238,14 @@ ON b.manager_id = e2.emp_id
 ORDER BY e1.emp_id;
 ```
 
-Task 11. **Create a Table of Books with Rental Price Above a Certain Threshold**:
+** Task 11. Create a Table of Books with Rental Price Above a Certain Threshold**:
 ```sql
 CREATE TABLE high_value_books AS
 SELECT * FROM books
 WHERE rental_price > 7.00;
 ```
 
-Task 12: **Retrieve the List of Books Not Yet Returned**
+** Task 12: Retrieve the List of Books Not Yet Returned**
 ```sql
 SELECT i.issued_id, i.issued_book_isbn, i.issued_book_name, i.issued_member_id
 FROM return_status r
@@ -497,3 +497,4 @@ SELECT * FROM overdue_fines;
 ## Conclusion
 
 This project demonstrates the application of SQL skills in creating and managing a library management system. It includes database setup, data manipulation, and advanced querying, providing a solid foundation for data management and analysis.
+
