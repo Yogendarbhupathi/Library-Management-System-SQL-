@@ -202,7 +202,7 @@ SELECT * FROM book_issued_count;
 
 The following SQL queries were used to address specific questions:
 
-** Task 7. Retrieve All Books in a Specific Category**:
+**Task 7. Retrieve All Books in a Specific Category**:
 
 ```sql
 SELECT * FROM books
@@ -220,7 +220,7 @@ GROUP BY b.category
 ORDER BY total_revenue DESC;
 ```
 
-** Task 9. List Members Who Registered in the Last 4 years:
+**Task 9. List Members Who Registered in the Last 4 years**:
 ```sql
 SELECT * FROM members
 WHERE date >= CURRENT_DATE() - INTERVAL 4 YEAR;
@@ -238,14 +238,14 @@ ON b.manager_id = e2.emp_id
 ORDER BY e1.emp_id;
 ```
 
-** Task 11. Create a Table of Books with Rental Price Above a Certain Threshold**:
+**Task 11. Create a Table of Books with Rental Price Above a Certain Threshold**:
 ```sql
 CREATE TABLE high_value_books AS
 SELECT * FROM books
 WHERE rental_price > 7.00;
 ```
 
-** Task 12: Retrieve the List of Books Not Yet Returned**
+**Task 12: Retrieve the List of Books Not Yet Returned**:
 ```sql
 SELECT i.issued_id, i.issued_book_isbn, i.issued_book_name, i.issued_member_id
 FROM return_status r
@@ -497,4 +497,5 @@ SELECT * FROM overdue_fines;
 ## Conclusion
 
 This project demonstrates the application of SQL skills in creating and managing a library management system. It includes database setup, data manipulation, and advanced querying, providing a solid foundation for data management and analysis.
+
 
